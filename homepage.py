@@ -15,7 +15,7 @@ st.subheader("This website is used to find the micronutrient deficiency of human
 
 
 st.write("Hidden hunger in human is found by using the images of nails and eyes.The micronutrient deficiency which can deteced for human are iron,iodine,vitamin b12,vitamin d,zinc and healthy")
-st.write("Hidden hunger in plant is found by using the images of banana leaf.The micronutrient deficiency which can deteced for human are iron,zin,manganese,boron and healthy")
+st.write("Hidden hunger in plant is found by using the images of banana leaf.The micronutrient deficiency which can deteced for human are iron,zinc,manganese,boron and healthy")
 
 st.sidebar.success("Select a page above.")
         
