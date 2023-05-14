@@ -27,7 +27,7 @@ local_css("style/style.css")
 
 
 # Load the image file
-image = Image.open(r'D:\project\micro.jpg')
+image = Image.open('micro.jpg')
 # Display the image in the Streamlit app
 st.image(image, use_column_width=True)
 
