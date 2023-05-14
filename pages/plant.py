@@ -37,7 +37,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 uploaded_file = st.file_uploader("Choose a image file", type="jpg")
-model = tf.keras.models.load_model(r"D:\project\models new val\resnet152v2.h5")
+model = tf.keras.models.load_model(r"models/resnet152v2.h5")
 map_dict = {0: 'Boron deficiency',
             1: 'Healthy',
             2: 'Iron deficiency',
