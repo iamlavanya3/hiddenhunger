@@ -34,48 +34,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 uploaded_file = st.file_uploader("Choose a image file", type="jpg")
-model = tf.keras.models.load_model(r"D:\project\resnet152v2nail.h5")
-camera=st.button("Capture")
-if camera:
-    # Function to process each frame of the video
-    def process_frame(frame):
-    # Convert the frame to grayscale
-      gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    
-    # Apply a threshold to the grayscale image
-      _, thresh = cv2.threshold(gray, 128, 255, cv2.THRESH_BINARY)
-    
-      return thresh
-
-# Create a VideoCapture object to capture video from the camera
-    cap = cv2.VideoCapture(0)
-
-# Set the dimensions of the video capture window
-    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
-
-# Define a function to capture video and display the results in the Streamlit app
-    def capture_video():
-        while True:
-        # Read a frame from the camera
-          ret, frame = cap.read()
-        
-        # Process the frame
-          processed_frame = process_frame(frame)
-        
-        # Display the original and processed frames in the Streamlit app
-          st.image(np.hstack((frame, processed_frame)), width=640)
-        
-        # Check if the user has pressed the "Stop" button
-          if st.button('Stop'):
-                break
-
-# Call the function to capture video and display the results in the Streamlit app
-    capture_video()
-
-# Release the VideoCapture object and close the window
-    cap.release()
-    cv2.destroyAllWindows()
+model = tf.keras.models.load_model(r"models/resnet152v2nail.h5")
 map_dict = {0: 'Iodine deficiency',
             1: 'Vitamin B12 deficiency',
             2: 'Vitamin D deficiency',
